@@ -16,7 +16,7 @@ COPY . .
 RUN npm run build 
 
 # Run the app on nginx
-FROM nginx:stable-alpine as runner
+FROM nginx:1.29.5-alpine3.23 as runner
 
 # Copy the build output to replace the default nginx contents
 COPY --from=builder /app/dist /usr/share/nginx/html
